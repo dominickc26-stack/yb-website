@@ -78,5 +78,22 @@
   }
 </script>
 
+<script>
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector('.site-header');
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      header.classList.add('collapsed');
+    } else {
+      header.classList.remove('collapsed');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>
+
 </body>
 </html>

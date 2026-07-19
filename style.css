@@ -19,6 +19,25 @@ body {
   padding: 0 40px;
   background-color: #1a1a1a;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.site-header.collapsed {
+  height: 50px;
+  padding: 0 40px;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+.site-header.collapsed .logo {
+  height: 38px;
 }
 
 .logo {
@@ -44,6 +63,11 @@ body {
   overflow: hidden;
   text-align: center;
   color: white;
+  transition: height 0.3s ease;
+}
+
+.hero.collapsed {
+  height: 200px;
 }
 
 .hero-video {
@@ -65,16 +89,31 @@ body {
   padding: 180px 20px;
   background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
+  transition: padding 0.3s ease;
+}
+
+.hero.collapsed .hero-content {
+  padding: 60px 20px;
 }
 
 .hero-content h1 {
   font-size: 42px;
   margin-bottom: 16px;
+  transition: font-size 0.3s ease;
+}
+
+.hero.collapsed .hero-content h1 {
+  font-size: 24px;
 }
 
 .hero-content p {
   font-size: 18px;
   color: #eeeeee;
+  transition: font-size 0.3s ease;
+}
+
+.hero.collapsed .hero-content p {
+  font-size: 14px;
 }
 
 /* Trail Runs */
