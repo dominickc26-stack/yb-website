@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Tee | YB All Terrain</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html"><img src="../images/logo.png" alt="YB All Terrain" class="logo"></a>
+    <nav>
+      <a href="../index.html#trail-runs">Trail Runs</a>
+      <a href="../merch.html">Merch</a>
+      <a href="https://instagram.com/ybterrain" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <section class="product-detail">
+    <div class="product-detail-images">
+      <img src="../images/explore-tee-1.jpg" alt="Explore Tee" class="carousel-image active" id="detail-img">
+      <img src="../images/explore-tee-2.jpg" alt="Explore Tee alternate view" class="carousel-image" id="detail-img-2">
+      <button class="carousel-btn prev" onclick="changeSlide(this, -1)">&#10094;</button>
+      <button class="carousel-btn next" onclick="changeSlide(this, 1)">&#10095;</button>
+    </div>
+
+    <div class="product-detail-info">
+      <h1>Explore Tee</h1>
+      <p class="product-price">$30.00</p>
+      <p class="product-description">
+        Built for the trail and made to last. The Explore Tee is a soft, breathable cotton blend
+        designed to keep you comfortable whether you're airing down at the trailhead or grabbing
+        drinks after the run. Screen printed YB All Terrain logo on the front.
+      </p>
+      <a href="#" class="buy-button large">Buy Now</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 YB All Terrain. Follow us <a href="https://instagram.com/ybterrain" target="_blank">@ybterrain</a></p>
+  </footer>
+
+  <script>
+    function changeSlide(button, direction) {
+      const carousel = button.parentElement;
+      const images = carousel.querySelectorAll('.carousel-image');
+      let currentIndex = [...images].findIndex(img => img.classList.contains('active'));
+
+      images[currentIndex].classList.remove('active');
+      let newIndex = (currentIndex + direction + images.length) % images.length;
+      images[newIndex].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

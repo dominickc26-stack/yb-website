@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built for Dirt Tee | YB All Terrain</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html"><img src="../images/logo.png" alt="YB All Terrain" class="logo"></a>
+    <nav>
+      <a href="../index.html#trail-runs">Trail Runs</a>
+      <a href="../merch.html">Merch</a>
+      <a href="https://instagram.com/ybterrain" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <section class="product-detail">
+    <div class="product-detail-images">
+      <img src="../images/built-for-dirt-tee-1.jpg" alt="Built for Dirt Tee" class="carousel-image active">
+      <img src="../images/built-for-dirt-tee-2.jpg" alt="Built for Dirt Tee alternate view" class="carousel-image">
+      <button class="carousel-btn prev" onclick="changeSlide(this, -1)">&#10094;</button>
+      <button class="carousel-btn next" onclick="changeSlide(this, 1)">&#10095;</button>
+    </div>
+
+    <div class="product-detail-info">
+      <h1>Built for Dirt Tee</h1>
+      <p class="product-price">$30.00</p>
+      <p class="product-description">
+        Made for the ones who never wash the mud off before the next run. The Built for Dirt Tee
+        is a heavyweight cotton tee with a durable print built to hold up to trail dust, sun, and
+        everything in between. Wear it proud on and off the trail.
+      </p>
+      <a href="#" class="buy-button large">Buy Now</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 YB All Terrain. Follow us <a href="https://instagram.com/ybterrain" target="_blank">@ybterrain</a></p>
+  </footer>
+
+  <script>
+    function changeSlide(button, direction) {
+      const carousel = button.parentElement;
+      const images = carousel.querySelectorAll('.carousel-image');
+      let currentIndex = [...images].findIndex(img => img.classList.contains('active'));
+
+      images[currentIndex].classList.remove('active');
+      let newIndex = (currentIndex + direction + images.length) % images.length;
+      images[newIndex].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
