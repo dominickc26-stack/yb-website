@@ -54,19 +54,26 @@
   </script>
 
   <script>
-  let lastScrollY = window.scrollY;
+  let ticking = false;
   const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.hero');
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+  function updateHeader() {
+    if (window.scrollY > 100) {
       header.classList.add('collapsed');
+      if (hero) hero.classList.add('collapsed');
     } else {
       header.classList.remove('collapsed');
+      if (hero) hero.classList.remove('collapsed');
     }
+    ticking = false;
+  }
 
-    lastScrollY = currentScrollY;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
   });
 </script>
 
