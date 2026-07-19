@@ -15,15 +15,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  height: 70px;
+  padding: 0 40px;
   background-color: #1a1a1a;
   color: white;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  height: 120px;
+  width: auto;
 }
 
 .site-header nav a {
@@ -125,6 +125,16 @@ body {
   margin-bottom: 32px;
 }
 
+.merch-page {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.merch-page h1 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
 .product-grid {
   display: flex;
   gap: 24px;
@@ -161,6 +171,19 @@ body {
 
 .buy-button:hover {
   background-color: #c9a648;
+}
+
+.view-all-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #1a1a1a;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.view-all-link:hover {
+  color: #c9a648;
 }
 
 /* Footer */
